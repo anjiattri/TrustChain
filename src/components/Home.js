@@ -11,7 +11,7 @@ function HomePage({ userType, handleLogout }) {
         {userType === "govt" ? "government" : "volunteer"} user.
       </p> */}
       <div>
-        {userType === "govt" ? <GovernmentComponent /> : <VolunteerComponent  handleLogout={handleLogout}/>}
+        {userType === "govt" ? <GovernmentComponent handleLogout={handleLogout} /> : <VolunteerComponent  handleLogout={handleLogout}/>}
       </div>
       {/* <button onClick={handleLogout}>Logout</button> */}
     </div>
