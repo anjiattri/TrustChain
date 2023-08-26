@@ -14,7 +14,7 @@ function LoginPage({ handleLogin }) {
   return (
     <div className="login-container">
       <div className="login-box">
-        <h3>Welcome to Trust Chain</h3>
+        <h2>Welcome to Trust Chain</h2>
         <div className="user-type-options">
           <label>
             <input

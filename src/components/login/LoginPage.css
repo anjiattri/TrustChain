@@ -23,13 +23,14 @@
 
 label {
   display: block;
-  margin-bottom: 8px; /* Slightly increased margin for labels */
+  margin-bottom: 15px; /* Slightly increased margin for labels */
   font-weight: bold;
 }
 
 .user-type-options label {
   display: inline-block; /* Place radio buttons in the same line */
   margin-right: 20px; /* Add spacing between radio buttons */
+  margin-bottom: 30px;
 }
 
 input[type="radio"] {
@@ -39,7 +40,7 @@ input[type="radio"] {
 input[type="email"],
 input[type="text"],
 input[type="password"] {
-  width: 100%; /* Full width input fields */
+  width: 80%; /* Full width input fields */
   padding: 10px;
   margin-bottom: 14px; /* Slightly increased margin */
   border: 1px solid #ccc;
@@ -53,10 +54,13 @@ button {
   color: white;
   border: none;
   cursor: pointer;
-  width: 100%; /* Full width button */
+  width: 80%; /* Full width button */
   font-size: 16px;
   border-radius: 4px;
+  height: 50px;
+  margin-top: 10px;
 }
+
 
 /* Additional styling for better button interaction */
 button:hover {
