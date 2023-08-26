@@ -18,6 +18,8 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import ListOfItems from './ListOfItems';
 import Volunteers from './Volunteers';
+import Button from '@mui/material/Button';
+import FormDetails from './FormDetails';
 
 const drawerWidth = 240;
 
@@ -153,6 +155,20 @@ function GovtComponent(props) {
               </Grid>
             </Grid>
           </Container>
+          <Container component="main" maxWidth="md" sx={{ mb: 5 }}>
+          <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
+            <Typography component="h1" variant="h4" align="center">
+            Enter Details
+            </Typography>
+            {/* <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}> */}
+                <FormDetails/>
+                  <Button
+                    variant="contained"
+                    sx={{ mt: 3, ml: 1 }}
+                  >Save</Button>
+            {/* </Box> */}
+          </Paper>
+      </Container>
         </Box>
       </Box>
     </ThemeProvider>

@@ -17,7 +17,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import ListOfItems from './ListOfItems';
-import Volunteers from './availableProgram/AvailablePrograms.js';
+import AvailablePrograms from './availableProgram/AvailablePrograms.js';
+import ExistingPrograms from './exisitngProgram/ExistingPrograms.js';
 
 const drawerWidth = 240;
 
@@ -148,7 +149,12 @@ function Layout(props) {
               {/* Recent Orders */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <Volunteers />
+                  <AvailablePrograms/>
+                </Paper>
+              </Grid>
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <ExistingPrograms/>
                 </Paper>
               </Grid>
             </Grid>
