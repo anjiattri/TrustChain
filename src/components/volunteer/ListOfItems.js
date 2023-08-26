@@ -4,7 +4,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // Define a CSS class to remove text decoration (underline)
 const noUnderlineLink = {
@@ -12,36 +12,38 @@ const noUnderlineLink = {
 };
 
 export default function ListItems(props) {
+  const navigate = useNavigate();
+
   function logout(e) {
     e.preventDefault();
     props.handleLogout();
+    navigate("/"); // Navigate to the home page after logout
   }
 
   return (
     <React.Fragment>
-      <ListItemButton>
-        <ListItemIcon>
-          <PeopleIcon />
-        </ListItemIcon>
-        <Link to="/available" style={noUnderlineLink}>
+      <Link to="/available" style={noUnderlineLink}>
+        <ListItemButton>
+          <ListItemIcon>
+            <PeopleIcon />
+          </ListItemIcon>
           <ListItemText primary="Available Programs" />
-        </Link>
-      </ListItemButton>
-      <ListItemButton>
-        <ListItemIcon>
-          <PeopleIcon />
-        </ListItemIcon>
-        <Link to="/existing" style={noUnderlineLink}>
+        </ListItemButton>
+      </Link>
+      <Link to="/existing" style={noUnderlineLink}>
+        <ListItemButton>
+          <ListItemIcon>
+            <PeopleIcon />
+          </ListItemIcon>
           <ListItemText primary="Existing Programs" />
-        </Link>
-      </ListItemButton>
+        </ListItemButton>
+      </Link>
+
       <ListItemButton onClick={(e) => logout(e)}>
         <ListItemIcon>
           <LayersIcon />
         </ListItemIcon>
-        <Link to="/" style={noUnderlineLink}>
-          <ListItemText primary="Logout" />
-        </Link>
+        <ListItemText primary="Logout" />
       </ListItemButton>
     </React.Fragment>
   );
