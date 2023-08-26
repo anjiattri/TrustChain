@@ -163,9 +163,8 @@ function GovtComponent(props) {
                 variant="outlined"
                 sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
               >
-                <Typography component="h1" variant="h4" align="center">
-                  Enter Details
-                </Typography>
+                <h1>Enter Program Details</h1>
+
                 <FormDetails />
                 <Button variant="contained" sx={{ mt: 3, ml: 1 }}>
                   Save
