@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom"; // Import necessary components
 import "./App.css";
 import HomePage from "./components/Home";
-import LoginPage from "./components/Login";
+import LoginPage from "./components/login/Login";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
