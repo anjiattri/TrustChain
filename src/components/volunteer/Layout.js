@@ -166,23 +166,6 @@ function Layout(props) {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-              {/* {currentPath != "/existing" ? (
-                <Grid item xs={12}>
-                  <Paper
-                    sx={{ p: 2, display: "flex", flexDirection: "column" }}
-                  >
-                    <AvailablePrograms />
-                  </Paper>
-                </Grid>
-              ) : (
-                <Grid item xs={12}>
-                  <Paper
-                    sx={{ p: 2, display: "flex", flexDirection: "column" }}
-                  >
-                    <ExistingPrograms />
-                  </Paper>
-                </Grid>
-              )} */}
               {content}
             </Grid>
           </Container>
