@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom"; // Import necessary components
+import "./App.css";
+import HomePage from "./components/Home";
+import LoginPage from "./components/Login";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userType, setUserType] = useState("govt");
+
+  const handleLogin = (selectedUserType) => {
+    setIsLoggedIn(true);
+    setUserType(selectedUserType);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          {isLoggedIn && (
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+            </ul>
+          )}
+        </nav>
+
+        <Routes>
+          <Route
+            path="/"
+            element={
+              isLoggedIn ? (
+                <HomePage userType={userType} />
+              ) : (
+                <LoginPage handleLogin={handleLogin} />
+              )
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
