@@ -1,6 +1,6 @@
+import MenuIcon from "@mui/icons-material/Menu";
 import MuiAppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
 import MuiDrawer from "@mui/material/Drawer";
@@ -13,9 +13,9 @@ import Typography from "@mui/material/Typography";
 import { ThemeProvider, createTheme, styled } from "@mui/material/styles";
 import * as React from "react";
 import { useLocation } from "react-router-dom";
-import FormDetails from "./FormDetails";
 import ListOfItems from "./ListOfItems";
-import Volunteers from "./Volunteers";
+import AvailablePrograms from "./availableProgram/AvailablePrograms.js";
+import ExistingPrograms from "./exisitngProgram/ExistingPrograms";
 
 const drawerWidth = 240;
 
@@ -66,7 +66,7 @@ const Drawer = styled(MuiDrawer, {
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
-function GovtComponent(props) {
+function Layout(props) {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -94,7 +94,7 @@ function GovtComponent(props) {
                 ...(open && { display: "none" }),
               }}
             >
-              {/* <MenuIcon />s */}
+              <MenuIcon />
             </IconButton>
             <Typography
               component="h1"
@@ -103,7 +103,7 @@ function GovtComponent(props) {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Government Detail
+              Volunteer Detail
             </Typography>
             {/* <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
@@ -121,10 +121,7 @@ function GovtComponent(props) {
               px: [1],
             }}
           >
-            <IconButton onClick={toggleDrawer}>
-              {/* <ChevronLeftIcon /s> */}
-              Trust Chain
-            </IconButton>
+            <IconButton onClick={toggleDrawer}>Trust Chain</IconButton>
           </Toolbar>
           <Divider />
           <List component="nav">
@@ -144,39 +141,31 @@ function GovtComponent(props) {
           }}
         >
           <Toolbar />
-          {currentPath == "/government" ? (
-            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-              <Grid container spacing={3}>
-                {/* Recent Orders */}
+          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <Grid container spacing={3}>
+              {currentPath != "/existing" ? (
                 <Grid item xs={12}>
                   <Paper
                     sx={{ p: 2, display: "flex", flexDirection: "column" }}
                   >
-                    <Volunteers />
+                    <AvailablePrograms />
                   </Paper>
                 </Grid>
-              </Grid>
-            </Container>
-          ) : (
-            <Container component="main" maxWidth="md" sx={{ mb: 5 }}>
-              <Paper
-                variant="outlined"
-                sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
-              >
-                <Typography component="h1" variant="h4" align="center">
-                  Enter Details
-                </Typography>
-                <FormDetails />
-                <Button variant="contained" sx={{ mt: 3, ml: 1 }}>
-                  Save
-                </Button>
-              </Paper>
-            </Container>
-          )}
+              ) : (
+                <Grid item xs={12}>
+                  <Paper
+                    sx={{ p: 2, display: "flex", flexDirection: "column" }}
+                  >
+                    <ExistingPrograms />
+                  </Paper>
+                </Grid>
+              )}
+            </Grid>
+          </Container>
         </Box>
       </Box>
     </ThemeProvider>
   );
 }
 
-export default GovtComponent;
+export default Layout;
