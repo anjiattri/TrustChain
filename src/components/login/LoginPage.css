@@ -59,10 +59,14 @@ button {
   border-radius: 4px;
   height: 50px;
   margin-top: 10px;
+  font-weight: 900;
 }
-
 
 /* Additional styling for better button interaction */
 button:hover {
   background-color: #0056b3; /* Darker blue on hover */
+}
+.login-heading {
+  margin-bottom: 30px;
+  color: darkblue;
 }
