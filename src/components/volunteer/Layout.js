@@ -17,7 +17,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import ListOfItems from './ListOfItems';
-import Volunteers from './Volunteers';
+import Volunteers from './availableProgram/AvailablePrograms.js';
 
 const drawerWidth = 240;
 
@@ -68,7 +68,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
-function GovtComponent(props) {
+function Layout(props) {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -161,4 +161,4 @@ function GovtComponent(props) {
 
 
 
-export default GovtComponent;
+export default Layout;

@@ -15,23 +15,23 @@ const rows = [
   createData(
     0,
     '16 Mar, 2019',
-    'Elvis Presley'
+    'Program 1'
   ),
   createData(
     1,
     '16 Mar, 2019',
-    'Paul McCartney',
+    'Program 2',
   ),
-  createData(2, '16 Mar, 2019', 'Tom Scholz'),
+  createData(2, '16 Mar, 2019', 'Program 3'),
   createData(
     3,
     '16 Mar, 2019',
-    'Michael Jackson'
+    'Program 4'
   ),
   createData(
     4,
     '15 Mar, 2019',
-    'Bruce Springsteen'
+    'Program 4'
   ),
 ];
 
@@ -39,15 +39,15 @@ function preventDefault(event) {
   event.preventDefault();
 }
 
-export default function Orders() {
+export default function ExistingPrograms() {
   return (
     <React.Fragment>
-      <h1>Volunteers</h1>
+      <h1>Existing Programs</h1>
       <Table size="small">
         <TableHead>
           <TableRow>
             <TableCell>Date</TableCell>
-            <TableCell>Volunteer's Name</TableCell>
+            <TableCell>Existing Program's Name</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

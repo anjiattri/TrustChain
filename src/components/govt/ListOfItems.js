@@ -6,7 +6,13 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import PeopleIcon from '@mui/icons-material/People';
 import LayersIcon from '@mui/icons-material/Layers';
 
-export const mainListItems = (
+export default function ListItems(props){
+    function logout(e) {
+        e.preventDefault()
+        props.handleLogout()
+    }
+    
+    return (
   <React.Fragment>
     <ListItemButton>
       <ListItemIcon>
@@ -20,7 +26,7 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Volunterrs" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton onClick={(e)=> logout(e)}>
       <ListItemIcon>
         <LayersIcon />
       </ListItemIcon>
@@ -28,3 +34,4 @@ export const mainListItems = (
     </ListItemButton>
   </React.Fragment>
 );
+    }
