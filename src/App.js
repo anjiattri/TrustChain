@@ -12,7 +12,9 @@ function App() {
     setIsLoggedIn(true);
     setUserType(selectedUserType);
   };
-
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
   return (
     <Router>
       <div>
@@ -31,7 +33,7 @@ function App() {
             path="/"
             element={
               isLoggedIn ? (
-                <HomePage userType={userType} />
+                <HomePage userType={userType} handleLogout={handleLogout} />
               ) : (
                 <LoginPage handleLogin={handleLogin} />
               )
