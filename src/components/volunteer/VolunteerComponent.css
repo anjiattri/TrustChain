@@ -1,9 +1,19 @@
-/* VolunteerComponent.css */
 .volunteer-container {
-  background-color: #f4f4f4;
+  background-color: var(
+    --dynamic-bg-color,
+    #f4f4f4
+  ); /* Default or dynamic background color */
+  min-height: 100vh; /* Ensure the container covers the full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1; /* Let the content expand to fill available space */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff; /* Ensure content has its own background */
 }
 
 .navbar-blue {
@@ -11,15 +21,23 @@
   justify-content: space-between;
   align-items: center;
   background-color: #007bff;
-  padding: 10px 20px;
+  padding: 5px 20px; /* Adjust padding as needed */
   border-radius: 8px 8px 0 0;
   color: white;
+  height: 80px; /* Set the desired height */
+  font-size: large;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .nav-list {
   list-style: none;
   display: flex;
   gap: 20px;
+}
+.nav-list>li>a{
+  color: white;
+  text-decoration: none;
 }
 
 .logout-button {
@@ -32,7 +50,7 @@
 }
 
 .program-list-container {
-  margin-top: 20px;
+  margin: 20px;
 }
 
 .program-list {
@@ -48,6 +66,15 @@
   background-color: #fff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
-.logout-button{
+.logout-button {
   width: 100px;
+  margin: 10px;
+}
+.active-link {
+  font-weight: bold; /* Style for the active link in the navbar */
+}
+
+.active-program {
+  background-color: #f0f0f0; /* Style for the active program in the list */
+  cursor: pointer;
 }
