@@ -5,15 +5,15 @@ import VolunteerComponent from "./volunteer/VolunteerComponent";
 function HomePage({ userType, handleLogout }) {
   return (
     <div className="App">
-      <h1>Welcome to the Home Page</h1>
+      {/* <h1>Welcome to the Home Page</h1>
       <p>
         You are logged in as a{" "}
         {userType === "govt" ? "government" : "volunteer"} user.
-      </p>
+      </p> */}
       <div>
-        {userType === "govt" ? <GovernmentComponent /> : <VolunteerComponent />}
+        {userType === "govt" ? <GovernmentComponent /> : <VolunteerComponent  handleLogout={handleLogout}/>}
       </div>
-      <button onClick={handleLogout}>Logout</button>
+      {/* <button onClick={handleLogout}>Logout</button> */}
     </div>
   );
 }

@@ -1,7 +1,7 @@
-.App {
+/* .App {
   text-align: center;
   margin-top: 100px;
-}
+} */
 
 .filter-options {
   position: absolute;
@@ -9,21 +9,3 @@
   right: 10px;
 }
 
-/* label {
-  display: block;
-  margin-bottom: 4px;
-}
-
-input {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 12px;
-}
-
-button {
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-} */

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 import HomePage from "./components/Home";
 import LoginPage from "./components/login/Login";
@@ -26,7 +26,7 @@ function App() {
 
     if (storedIsLoggedIn === "true") {
       setIsLoggedIn(true);
-      setUserType(userType)
+      setUserType(userType);
     }
   }, []);
 
@@ -38,16 +38,6 @@ function App() {
   return (
     <Router>
       <div>
-        <nav>
-          {isLoggedIn && (
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-            </ul>
-          )}
-        </nav>
-
         <Routes>
           <Route
             path="/"
