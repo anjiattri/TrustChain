@@ -11,6 +11,7 @@ function App() {
   const handleLogin = (selectedUserType) => {
     setIsLoggedIn(true);
     setUserType(selectedUserType);
+    localStorage.setItem("userType", selectedUserType); // Store userType in local storage on login
   };
 
   const handleLogout = () => {
@@ -21,8 +22,11 @@ function App() {
   // Check for stored login state on app load
   useEffect(() => {
     const storedIsLoggedIn = localStorage.getItem("isLoggedIn");
+    const userType = localStorage.getItem("userType");
+
     if (storedIsLoggedIn === "true") {
       setIsLoggedIn(true);
+      setUserType(userType)
     }
   }, []);
 
