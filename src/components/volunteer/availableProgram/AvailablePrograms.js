@@ -1,10 +1,9 @@
-import * as React from 'react';
-import Link from '@mui/material/Link';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import * as React from "react";
 
 // Generate Order Data
 function createData(id, date, name) {
@@ -12,27 +11,11 @@ function createData(id, date, name) {
 }
 
 const rows = [
-  createData(
-    0,
-    '16 Mar, 2019',
-    'Program 1'
-  ),
-  createData(
-    1,
-    '16 Mar, 2019',
-    'Program 2',
-  ),
-  createData(2, '16 Mar, 2019', 'Program 3'),
-  createData(
-    3,
-    '16 Mar, 2019',
-    'Program 4'
-  ),
-  createData(
-    4,
-    '15 Mar, 2019',
-    'Program 4'
-  ),
+  createData(0, "16 Mar, 2019", "Program 1"),
+  createData(1, "16 Mar, 2019", "Program 2"),
+  createData(2, "16 Mar, 2019", "Program 3"),
+  createData(3, "16 Mar, 2019", "Program 4"),
+  createData(4, "15 Mar, 2019", "Program 4"),
 ];
 
 function preventDefault(event) {
@@ -59,9 +42,6 @@ export default function AvailablePrograms() {
           ))}
         </TableBody>
       </Table>
-      <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-        See more orders
-      </Link>
     </React.Fragment>
   );
 }

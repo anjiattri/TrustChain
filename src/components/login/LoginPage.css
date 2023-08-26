@@ -37,7 +37,9 @@ label {
 }
 
 input[type="radio"] {
-  margin-right: 4px; /* Add spacing between radio button and label */
+  width: 20px; /* Adjust the width */
+  height: 20px; /* Adjust the height */
+  margin-right: 10px; /* Add spacing between radio button and label */
 }
 
 input[type="email"],
@@ -63,7 +65,7 @@ button {
   height: 50px;
   margin-top: 20px;
   font-weight: 900;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 /* Additional styling for better button interaction */

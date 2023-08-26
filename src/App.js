@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 import HomePage from "./components/Home";
+import GovtComponent from "./components/govt/GovtComponent";
 import LoginPage from "./components/login/Login";
+import VolunteerComponent from "./components/volunteer/Layout";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -48,6 +50,22 @@ function App() {
                 <LoginPage handleLogin={handleLogin} />
               )
             }
+          />
+          <Route
+            path="/available"
+            element={<VolunteerComponent handleLogout={handleLogout} />}
+          />
+          <Route
+            path="/existing"
+            element={<VolunteerComponent handleLogout={handleLogout} />}
+          />
+          <Route
+            path="/government"
+            element={<GovtComponent handleLogout={handleLogout} />}
+          />
+          <Route
+            path="/program"
+            element={<GovtComponent handleLogout={handleLogout} />}
           />
         </Routes>
       </div>

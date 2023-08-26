@@ -59,7 +59,9 @@ function LoginPage({ handleLogin }) {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button onClick={handleLoginClick}>Login</button>
+        <button onClick={handleLoginClick}>Generate</button>
+        <button onClick={handleLoginClick}>Already a User? Click Here</button>
+
       </div>
     </div>
   );
