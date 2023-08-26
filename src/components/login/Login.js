@@ -36,19 +36,19 @@ function LoginPage({ handleLogin }) {
           </label>
         </div>
         <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div>
           <label>Username:</label>
           <input
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Email:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div>
@@ -59,7 +59,7 @@ function LoginPage({ handleLogin }) {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button onClick={handleLoginClick}>Generate</button>
+        <button onClick={handleLoginClick}>Generate DID</button>
         <button onClick={handleLoginClick}>Already a User? Click Here</button>
 
       </div>

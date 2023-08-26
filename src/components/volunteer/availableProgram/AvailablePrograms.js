@@ -3,6 +3,8 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import Button from '@mui/material/Button';
+
 import * as React from "react";
 
 // Generate Order Data
@@ -31,6 +33,7 @@ export default function AvailablePrograms() {
           <TableRow>
             <TableCell>Date</TableCell>
             <TableCell>Available Program's Name</TableCell>
+            <TableCell>Action</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -38,6 +41,9 @@ export default function AvailablePrograms() {
             <TableRow key={row.id}>
               <TableCell>{row.date}</TableCell>
               <TableCell>{row.name}</TableCell>
+              <TableCell>
+                  <Button variant='contained' color='success'>Sign Up</Button>
+            </TableCell>
             </TableRow>
           ))}
         </TableBody>

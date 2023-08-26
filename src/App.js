@@ -53,19 +53,27 @@ function App() {
           />
           <Route
             path="/available"
-            element={<VolunteerComponent handleLogout={handleLogout} />}
+            element={isLoggedIn ? <VolunteerComponent handleLogout={handleLogout}/> : null}
           />
           <Route
             path="/existing"
-            element={<VolunteerComponent handleLogout={handleLogout} />}
+            element={isLoggedIn ? <VolunteerComponent handleLogout={handleLogout} /> : null}
           />
           <Route
             path="/government"
-            element={<GovtComponent handleLogout={handleLogout} />}
+            element={isLoggedIn ? <GovtComponent handleLogout={handleLogout} /> : null}
           />
           <Route
             path="/program"
-            element={<GovtComponent handleLogout={handleLogout} />}
+            element={ isLoggedIn ? <GovtComponent handleLogout={handleLogout} /> : null}
+          />
+          <Route
+            path="/programs"
+            element={ isLoggedIn ? <GovtComponent handleLogout={handleLogout} /> : null}
+          />
+          <Route
+            path="/createprogram"
+            element={ isLoggedIn ? <GovtComponent handleLogout={handleLogout} /> : null}
           />
         </Routes>
       </div>

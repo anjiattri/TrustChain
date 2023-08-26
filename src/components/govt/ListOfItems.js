@@ -22,16 +22,16 @@ export default function ListItems(props) {
 
   return (
     <React.Fragment>
-      <Link to="/government" style={noUnderlineLink}>
+      <Link to="/programs" style={noUnderlineLink}>
         <ListItemButton>
           <ListItemIcon>
             <PeopleIcon />
           </ListItemIcon>
-          <ListItemText primary="Volunteers" />
+          <ListItemText primary="My Programs" />
         </ListItemButton>
       </Link>
 
-      <Link to="/program" style={noUnderlineLink}>
+      <Link to="/createprogram" style={noUnderlineLink}>
         <ListItemButton>
           <ListItemIcon>
             <DashboardIcon />

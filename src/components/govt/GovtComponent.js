@@ -16,6 +16,7 @@ import { useLocation } from "react-router-dom";
 import FormDetails from "./FormDetails";
 import ListOfItems from "./ListOfItems";
 import Volunteers from "./Volunteers";
+import CreatedPrograms from "./CreatedPrograms";
 
 const drawerWidth = 240;
 
@@ -73,6 +74,49 @@ function GovtComponent(props) {
   };
   const location = useLocation();
   const currentPath = location.pathname;
+
+  let content;
+
+  if (currentPath == "/government") {
+    content =  <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+                <Grid container spacing={3}>
+                  <Grid item xs={12}>
+                    <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+                      <Volunteers />
+                    </Paper>
+                  </Grid>
+                </Grid>
+              </Container>
+  } else if (currentPath == "/createprogram") {
+    content = <Container component="main" maxWidth="md" sx={{ mb: 5 }}>
+                <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
+                  <h1>Enter Program Details</h1>
+                  <FormDetails />
+                  <Button variant="contained" sx={{ mt: 3, ml: 1 }}>Save</Button>
+                </Paper>
+              </Container>
+  } else if( currentPath == "/programs" ){
+    content =  <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+                <Grid container spacing={3}>
+                  <Grid item xs={12}>
+                    <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+                      <CreatedPrograms />
+                    </Paper>
+                  </Grid>
+                </Grid>
+              </Container>
+  }
+  else {
+    content = <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+                <Grid container spacing={3}>
+                  <Grid item xs={12}>
+                    <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+                      <CreatedPrograms />
+                    </Paper>
+                  </Grid>
+                </Grid>
+              </Container>
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -144,34 +188,7 @@ function GovtComponent(props) {
           }}
         >
           <Toolbar />
-          {currentPath !== "/program" ? (
-            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-              <Grid container spacing={3}>
-                {/* Recent Orders */}
-                <Grid item xs={12}>
-                  <Paper
-                    sx={{ p: 2, display: "flex", flexDirection: "column" }}
-                  >
-                    <Volunteers />
-                  </Paper>
-                </Grid>
-              </Grid>
-            </Container>
-          ) : (
-            <Container component="main" maxWidth="md" sx={{ mb: 5 }}>
-              <Paper
-                variant="outlined"
-                sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
-              >
-                <h1>Enter Program Details</h1>
-
-                <FormDetails />
-                <Button variant="contained" sx={{ mt: 3, ml: 1 }}>
-                  Save
-                </Button>
-              </Paper>
-            </Container>
-          )}
+          {content}
         </Box>
       </Box>
     </ThemeProvider>
