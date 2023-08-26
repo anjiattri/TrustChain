@@ -21,7 +21,6 @@
   justify-content: space-between;
   align-items: center;
   background-color: #007bff;
-  padding: 5px 20px; /* Adjust padding as needed */
   border-radius: 8px 8px 0 0;
   color: white;
   height: 80px; /* Set the desired height */
@@ -47,6 +46,9 @@
   border-radius: 4px;
   padding: 6px 12px;
   cursor: pointer;
+  width: 100px;
+  margin: 10px;
+  margin-right: 50px;
 }
 
 .program-list-container {
@@ -66,10 +68,7 @@
   background-color: #fff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
-.logout-button {
-  width: 100px;
-  margin: 10px;
-}
+
 .active-link {
   font-weight: bold; /* Style for the active link in the navbar */
 }
