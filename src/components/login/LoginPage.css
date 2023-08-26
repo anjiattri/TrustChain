@@ -22,14 +22,17 @@
 }
 
 label {
-  display: block;
   margin-bottom: 15px; /* Slightly increased margin for labels */
   font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
 }
 
+
 .user-type-options label {
-  display: inline-block; /* Place radio buttons in the same line */
-  margin-right: 20px; /* Add spacing between radio buttons */
+  display: inline-block; 
+  margin-right: 60px; 
   margin-bottom: 30px;
 }
 
