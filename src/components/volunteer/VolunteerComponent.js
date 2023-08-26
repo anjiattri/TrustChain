@@ -11,24 +11,24 @@ function VolunteerComponent({ handleLogout }) {
       <nav className="navbar-blue">
         <ul className="nav-list">
           <li>
-            <a
+            <button
               className={`nav-link-button ${
                 activeProgram === "Available Programs" ? "active-link" : ""
               }`}
               onClick={() => setActiveProgram("Available Programs")}
             >
               Available Programs
-            </a>
+            </button>
           </li>
           <li>
-            <a
+            <button
               className={`nav-link-button ${
                 activeProgram === "Existing Programs" ? "active-link" : ""
               }`}
               onClick={() => setActiveProgram("Existing Programs")}
             >
               Existing Programs
-            </a>
+            </button>
           </li>
         </ul>
         <button className="logout-button" onClick={handleLogout}>
