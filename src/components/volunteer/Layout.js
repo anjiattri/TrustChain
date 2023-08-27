@@ -73,34 +73,38 @@ function Layout(props) {
   };
   const location = useLocation();
   const currentPath = location.pathname;
-  
+
   let content;
 
   if (currentPath == "/available") {
-    content = <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-                    <AvailablePrograms />
-                </Paper>
-              </Grid>
+    content = (
+      <Grid item xs={12}>
+        <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+          <AvailablePrograms />
+        </Paper>
+      </Grid>
+    );
   } else if (currentPath == "/existing") {
-    content = <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-                    <ExistingPrograms />
-                </Paper>
-              </Grid>
+    content = (
+      <Grid item xs={12}>
+        <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+          <ExistingPrograms />
+        </Paper>
+      </Grid>
+    );
   } else {
-    content = <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-                    <AvailablePrograms />
-                </Paper>
-              </Grid>
+    content = (
+      <Grid item xs={12}>
+        <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+          <AvailablePrograms />
+        </Paper>
+      </Grid>
+    );
   }
-
 
   return (
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: "flex" }}>
-        {/* <CssBaseline /> */}
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
@@ -128,11 +132,6 @@ function Layout(props) {
             >
               Volunteer Detail
             </Typography>
-            {/* <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton> */}
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
