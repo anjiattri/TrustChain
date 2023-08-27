@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { post } from "../../utils/apiService";
 import "./LoginPage.css"; // Import your custom CSS file for styling
-
 function LoginPage({ handleLogin }) {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
@@ -8,7 +10,37 @@ function LoginPage({ handleLogin }) {
   const [userType, setUserType] = useState("govt");
 
   const handleLoginClick = () => {
-    handleLogin(userType);
+    // handleLogin(userType);
+    toast.info(`WORK IN PROGRESS!`, {
+      position: "top-right",
+      autoClose: 3000,
+    });
+  };
+
+  const handleGenerateDID = () => {
+    const postData = {
+      username: username,
+      password: password,
+      did: email,
+      persona: userType == "govt" ? "Program Manager" : "Volunteer",
+    };
+
+    post("/v1/users", postData)
+      .then((response) => {
+        toast.success(`${response.message} for ${response.user}`, {
+          position: "top-right",
+          autoClose: 3000,
+        });
+        console.log("POST response:", response);
+        handleLogin(userType);
+      })
+      .catch((error) => {
+        toast.error(`Error:${error.message} `, {
+          position: "top-right",
+          autoClose: 3000,
+        });
+        console.error("Error posting data:", error);
+      });
   };
 
   return (
@@ -23,7 +55,7 @@ function LoginPage({ handleLogin }) {
               checked={userType === "govt"}
               onChange={() => setUserType("govt")}
             />
-            Government
+            Program Manager
           </label>
           <label>
             <input
@@ -59,9 +91,8 @@ function LoginPage({ handleLogin }) {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button onClick={handleLoginClick}>Generate DID</button>
+        <button onClick={handleGenerateDID}>Generate DID</button>
         <button onClick={handleLoginClick}>Already a User? Click Here</button>
-
       </div>
     </div>
   );

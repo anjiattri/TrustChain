@@ -1,7 +1,8 @@
 // apiService.js
 
 // Define the base URL for your API
-const BASE_URL = "https://api.example.com"; // Replace with your API URL
+const BASE_URL = "http://localhost:8082"; // Replace with your API URL
+
 
 // Reusable function to make GET requests
 export async function get(url) {
