@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { post } from "../../utils/apiService";
-import "./LoginPage.css"; // Import your custom CSS file for styling
+import "./LoginPage.css";
 function LoginPage({ handleLogin }) {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");

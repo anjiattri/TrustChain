@@ -1,6 +1,5 @@
 import MuiAppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
 import MuiDrawer from "@mui/material/Drawer";
@@ -64,7 +63,6 @@ const Drawer = styled(MuiDrawer, {
   },
 }));
 
-// TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 function GovtComponent(props) {
@@ -98,15 +96,6 @@ function GovtComponent(props) {
         >
           <h1>Enter Program Details</h1>
           <FormDetails />
-          <Button
-            variant="contained"
-            sx={{ mt: 3 }}
-            onClick={() => {
-              alert("saved");
-            }}
-          >
-            Save
-          </Button>
         </Paper>
       </Container>
     );
@@ -139,11 +128,10 @@ function GovtComponent(props) {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: "flex" }}>
-        {/* <CssBaseline /> */}
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
-              pr: "24px", // keep right padding when drawer closed
+              pr: "24px",
             }}
           >
             <IconButton
@@ -155,9 +143,7 @@ function GovtComponent(props) {
                 marginRight: "36px",
                 ...(open && { display: "none" }),
               }}
-            >
-              {/* <MenuIcon />s */}
-            </IconButton>
+            ></IconButton>
             <Typography
               component="h1"
               variant="h6"
@@ -167,11 +153,6 @@ function GovtComponent(props) {
             >
               Program Manager Detail
             </Typography>
-            {/* <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton> */}
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -183,10 +164,7 @@ function GovtComponent(props) {
               px: [1],
             }}
           >
-            <IconButton onClick={toggleDrawer}>
-              {/* <ChevronLeftIcon /s> */}
-              Credify
-            </IconButton>
+            <IconButton onClick={toggleDrawer}>Credify</IconButton>
           </Toolbar>
           <Divider />
           <List component="nav">
