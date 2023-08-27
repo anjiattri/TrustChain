@@ -24,6 +24,7 @@ function LoginPage({ handleLogin }) {
       did: email,
       persona: userType == "govt" ? "Program Manager" : "Volunteer",
     };
+    handleLogin(userType);
 
     post("/v1/users", postData)
       .then((response) => {
