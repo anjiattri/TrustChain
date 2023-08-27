@@ -73,6 +73,29 @@ function Layout(props) {
   };
   const location = useLocation();
   const currentPath = location.pathname;
+  
+  let content;
+
+  if (currentPath == "/available") {
+    content = <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+                    <AvailablePrograms />
+                </Paper>
+              </Grid>
+  } else if (currentPath == "/existing") {
+    content = <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+                    <ExistingPrograms />
+                </Paper>
+              </Grid>
+  } else {
+    content = <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+                    <AvailablePrograms />
+                </Paper>
+              </Grid>
+  }
+
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -121,7 +144,7 @@ function Layout(props) {
               px: [1],
             }}
           >
-            <IconButton onClick={toggleDrawer}>Trust Chain</IconButton>
+            <IconButton onClick={toggleDrawer}>Credify</IconButton>
           </Toolbar>
           <Divider />
           <List component="nav">
@@ -143,23 +166,7 @@ function Layout(props) {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-              {currentPath != "/existing" ? (
-                <Grid item xs={12}>
-                  <Paper
-                    sx={{ p: 2, display: "flex", flexDirection: "column" }}
-                  >
-                    <AvailablePrograms />
-                  </Paper>
-                </Grid>
-              ) : (
-                <Grid item xs={12}>
-                  <Paper
-                    sx={{ p: 2, display: "flex", flexDirection: "column" }}
-                  >
-                    <ExistingPrograms />
-                  </Paper>
-                </Grid>
-              )}
+              {content}
             </Grid>
           </Container>
         </Box>
