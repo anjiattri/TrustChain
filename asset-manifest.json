@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/anji.attri.github.io/TrustChain/static/css/main.0253df84.css",
+    "main.js": "/anji.attri.github.io/TrustChain/static/js/main.334cdac1.js",
+    "static/js/787.54078b8b.chunk.js": "/anji.attri.github.io/TrustChain/static/js/787.54078b8b.chunk.js",
+    "index.html": "/anji.attri.github.io/TrustChain/index.html",
+    "main.0253df84.css.map": "/anji.attri.github.io/TrustChain/static/css/main.0253df84.css.map",
+    "main.334cdac1.js.map": "/anji.attri.github.io/TrustChain/static/js/main.334cdac1.js.map",
+    "787.54078b8b.chunk.js.map": "/anji.attri.github.io/TrustChain/static/js/787.54078b8b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0253df84.css",
+    "static/js/main.334cdac1.js"
+  ]
+}
