@@ -26,7 +26,7 @@ export default function CreatedPrograms() {
 
   return (
     <React.Fragment>
-      <h1>Your Programs</h1>
+      <h1>My Programs</h1>
       <Table size="small">
         <TableHead>
           <TableRow>
