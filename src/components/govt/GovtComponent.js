@@ -13,10 +13,10 @@ import Typography from "@mui/material/Typography";
 import { ThemeProvider, createTheme, styled } from "@mui/material/styles";
 import * as React from "react";
 import { useLocation } from "react-router-dom";
+import CreatedPrograms from "./CreatedPrograms";
 import FormDetails from "./FormDetails";
 import ListOfItems from "./ListOfItems";
 import Volunteers from "./Volunteers";
-import CreatedPrograms from "./CreatedPrograms";
 
 const drawerWidth = 240;
 
@@ -78,44 +78,62 @@ function GovtComponent(props) {
   let content;
 
   if (currentPath == "/government") {
-    content =  <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-                <Grid container spacing={3}>
-                  <Grid item xs={12}>
-                    <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-                      <Volunteers />
-                    </Paper>
-                  </Grid>
-                </Grid>
-              </Container>
+    content = (
+      <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+            <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+              <Volunteers />
+            </Paper>
+          </Grid>
+        </Grid>
+      </Container>
+    );
   } else if (currentPath == "/createprogram") {
-    content = <Container component="main" maxWidth="md" sx={{ mb: 5 }}>
-                <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
-                  <h1>Enter Program Details</h1>
-                  <FormDetails />
-                  <Button variant="contained" sx={{ mt: 3, ml: 1 }}>Save</Button>
-                </Paper>
-              </Container>
-  } else if( currentPath == "/programs" ){
-    content =  <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-                <Grid container spacing={3}>
-                  <Grid item xs={12}>
-                    <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-                      <CreatedPrograms />
-                    </Paper>
-                  </Grid>
-                </Grid>
-              </Container>
-  }
-  else {
-    content = <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-                <Grid container spacing={3}>
-                  <Grid item xs={12}>
-                    <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-                      <CreatedPrograms />
-                    </Paper>
-                  </Grid>
-                </Grid>
-              </Container>
+    content = (
+      <Container component="main" maxWidth="md" sx={{ mb: 5 }}>
+        <Paper
+          variant="outlined"
+          sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
+        >
+          <h1>Enter Program Details</h1>
+          <FormDetails />
+          <Button
+            variant="contained"
+            sx={{ mt: 3 }}
+            onClick={() => {
+              alert("saved");
+            }}
+          >
+            Save
+          </Button>
+        </Paper>
+      </Container>
+    );
+  } else if (currentPath == "/programs") {
+    content = (
+      <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+            <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+              <CreatedPrograms />
+            </Paper>
+          </Grid>
+        </Grid>
+      </Container>
+    );
+  } else {
+    content = (
+      <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+            <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+              <CreatedPrograms />
+            </Paper>
+          </Grid>
+        </Grid>
+      </Container>
+    );
   }
 
   return (
@@ -167,7 +185,7 @@ function GovtComponent(props) {
           >
             <IconButton onClick={toggleDrawer}>
               {/* <ChevronLeftIcon /s> */}
-              Trust Chain
+              Credify
             </IconButton>
           </Toolbar>
           <Divider />

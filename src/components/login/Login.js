@@ -14,7 +14,7 @@ function LoginPage({ handleLogin }) {
   return (
     <div className="login-container">
       <div className="login-box">
-        <h1 className="login-heading">Welcome to Trust Chain</h1>
+        <h1 className="login-heading">Welcome to Credify</h1>
         <div className="user-type-options">
           <label>
             <input

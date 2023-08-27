@@ -144,7 +144,7 @@ function Layout(props) {
               px: [1],
             }}
           >
-            <IconButton onClick={toggleDrawer}>Trust Chain</IconButton>
+            <IconButton onClick={toggleDrawer}>Credify</IconButton>
           </Toolbar>
           <Divider />
           <List component="nav">
