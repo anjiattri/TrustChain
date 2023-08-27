@@ -47,6 +47,7 @@ function LoginPage({ handleLogin }) {
     <div className="login-container">
       <div className="login-box">
         <h1 className="login-heading">Welcome to Credify</h1>
+        <p>A trusted, transparent and self-sovereign identities for sourcing credible volunteers</p>
         <div className="user-type-options">
           <label>
             <input
@@ -92,7 +93,7 @@ function LoginPage({ handleLogin }) {
           />
         </div>
         <button onClick={handleGenerateDID}>Generate DID</button>
-        <button onClick={handleLoginClick}>Already a User? Click Here</button>
+        <button onClick={handleLoginClick}>Connect Using Your Wallet?</button>
       </div>
     </div>
   );
